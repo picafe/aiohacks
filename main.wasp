@@ -40,11 +40,11 @@ app aio {
 entity User {=psl
   id          Int     @id @default(autoincrement())
   name String @unique
-  greeting String
-  subtitle String
-  header String
-  description String
-  image String
+  greeting String?
+  subtitle String?
+  header String?
+  description String?
+  image String?
 psl=}
 
 
@@ -105,5 +105,10 @@ query getUser {
   fn: import { getUser } from "@src/queries.js",
   // Tell Wasp that this query reads from the `Task` entity. Wasp will
   // automatically update the results of this query when tasks are modified.
+  entities: [User]
+}
+
+action editUser {
+  fn: import { updateUser } from "@src/actions",
   entities: [User]
 }

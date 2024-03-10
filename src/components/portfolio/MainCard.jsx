@@ -3,7 +3,6 @@ import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "../../utils/cn";
 
 const cardbg = "/public/main-card-bg.png"
-const avatar = "/public/arcticfox.jpg"
 
 import Meteors from "../Meteors.jsx";
 
@@ -51,7 +50,7 @@ export default function MainCard({ className, user }) {
                     <Meteors />
                     <div className='group flex flex-row items-center my-auto'>
                         <div
-                            style={{ backgroundImage: "url(" + avatar + ")" }}
+                            style={{ backgroundImage: "url(/public/profilepics/" + user.image + ")" }}
                             className='size-14 block flex-shrink-0 m-4 bg-cover rounded-full bg-center'
                         />
                         <div className='group block text-left'>

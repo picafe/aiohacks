@@ -8,6 +8,12 @@ module.exports = {
   content: [resolveProjectPath('./src/**/*.{js,jsx,ts,tsx}')],
   theme: {
     extend: {
+      fontFamily: {
+        clash: ["ClashDisplay-Variable", "sans-serif"]
+      },
+      borderRadius: {
+        "4xl": "2.5rem",
+      },
       animation: {
         "meteor-effect": "meteor 5s linear infinite",
         "shimmer": "shimmer 2s linear infinite"

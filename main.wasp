@@ -15,6 +15,7 @@ app aio {
   auth: {
     userEntity: User,
     methods: {
+      
       email: {
         fromField: {
           name: "Portfolio Cafe",
@@ -26,6 +27,7 @@ app aio {
         passwordReset: {
           clientRoute: PasswordResetRoute,
         },
+        userSignupFields: import { userSignupFields } from "@src/auth/signup",
 
       },
 
@@ -38,7 +40,11 @@ app aio {
 entity User {=psl
   id          Int     @id @default(autoincrement())
   name String @unique
-  
+  greeting String
+  subtitle String
+  header String
+  description String
+  image String
 psl=}
 
 
@@ -61,6 +67,7 @@ page DemoPage {
 
 route EditorRoute { path: "/editor", to: EditorPage }
 page EditorPage {
+  authRequired: true,
   component: import EditorPage from "@src/EditorPage.jsx"
 }
 

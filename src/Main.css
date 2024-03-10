@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
+  @font-face {
+    font-family: "ClashDisplay-Variable";
+    src: url("./ClashDisplay-Variable.woff2") format("woff2"),
+      url("./ClashDisplay-Variable.woff") format("woff"),
+      url("./ClashDisplay-Variable.ttf") format("truetype");
+    font-weight: 200 700;
+    font-display: swap;
+    font-style: normal;
+  }
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,6 +25,61 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+}
+
+.clash-display {
+  font-family: "ClashDisplay-Variable", sans-serif;
+}
+
+.main-card:before {
+  background: linear-gradient(
+      18.48deg,
+      rgba(255, 255, 255, 0.25) 2.76%,
+      rgba(255, 255, 255, 0) 17.23%
+    ),
+    linear-gradient(
+      200.6deg,
+      rgba(255, 255, 255, 0.25) 4.13%,
+      rgba(255, 255, 255, 0) 20.54%
+    );
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 1px;
+  pointer-events: none;
+  position: absolute;
+}
+
+.main-card--var {
+  
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 1px;
+  pointer-events: none;
+  position: absolute;
+}
+
+
+.main-card-bg {
+  height: 1010px;
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1010px;
+  z-index: 1;
 }
 
 .container {
